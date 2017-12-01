@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>SnapSVG example</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <h1>SnapSVG example</h1>
+    <!-- Define the SVG element -->
+    <svg id="mySVG" width="400" height="400" style="border: 1px solid #999"></svg>
+    <p>
+        <input type="range" value="100" step="1" id="radiusLength" min="1" max="200" style="width:400px">
+    </p>
+    <h3>
+        Current radius:
+        <span id="radiusOutput">100</span>
+    </h3>
+    <!-- Include the SnapSVG file -->
+    <script src="./assets/vendor/snapsvg/snap.svg-min.js"></script>
+    <!-- Write your code using SnapSVG, inline or in an external file -->
+    <script>
+        //Create a reference to the SVG through Snap
+        var mySnap = Snap("#mySVG");
+
+        //Add a circle
+        var myCircle = mySnap.circle(200, 200, 100);
+        myCircle.attr({
+            fill: "darkred",
+        });
+
+        //Add a listener to the radius slider
+        var slider = document.getElementById('radiusLength');
+        slider.addEventListener('change', function () {
+            //Animate the circle
+            myCircle.animate({
+                //Associate the r (i.e. radius) attribute to the current value of the slider
+                r: slider.value
+            }, 500);
+            //Show the new radius length
+            document.getElementById('radiusOutput').textContent = slider.value;
+        });
+    </script>
+</body>
+
+</html>
