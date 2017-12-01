@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Greensock example</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The element we want to move must have a relative position -->
+    <style>
+        #JSLogo {
+            left: 0;
+            position: relative;
+            width: 150px;
+            transform: rotateY(180deg);
+            transform: rotateX(180deg);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Greensock basic example</h1>
+    <p>Can you recognize this logo?</p>
+    <div>
+        <img src="./assets/images/js-logo.svg" alt="JavaScript" title="JavaScript" id="JSLogo">
+    </div>
+    <button id="startAnimationBtn">Click to see the correct shape</button>
+
+    <!-- Include the Greensock library, in this case the TweenLite -->
+    <script src="./assets/vendor/greensock-js/TweenLite.min.js"></script>
+
+    <!-- Include the CSSPlugin that is necessary to manipulate CSS properties -->
+    <script src="./assets/vendor/greensock-js/plugins/CSSPlugin.min.js"></script>
+
+    <!-- Add your code using the library, inline or in another file -->
+    <script>
+        //Identify the button that starts the animation and add an event listener
+        var start = document.getElementById('startAnimationBtn');
+
+        //Identify the element to animate
+        var elementToMove = document.getElementById('JSLogo');
+
+        //Add an event listener to start the animation
+        start.addEventListener('click', function () {
+            //Use Greensock TweenLite to move the object. In this case you must provide :
+            //1. the element to animate
+            //2. the duration of the animation in seconds
+            //3. all the CSS properties that you want to change compared to the current properties (see CSS style in the head)
+            TweenLite.to(elementToMove, 5, {
+                left: "50%",
+                transform: "rotateY(0deg)",
+                transform: "rotateX(0deg)"
+            });
+        });
+    </script>
+</body>
+
+</html>
