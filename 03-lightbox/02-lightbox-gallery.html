@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Include the Lightbox CSS file -->
+    <link href="./assets/vendor/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <!-- Add your custom CSS, in this case to style the thumbnails -->
+    <style>
+        .thumbnails ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .thumbnails ul li {
+            display: inline-block;
+            margin-right: 50px;
+        }
+
+        .thumbnails img {
+            max-width: 200px;
+            max-height: 200px;
+            border: 1px solid #999;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Lightbox Gallery</h1>
+    <p>Click on the thumbnails to enlarge the images.</p>
+    <div class="thumbnails">
+        <ul>
+            <li>
+                <!-- First image -->
+                <a href="./assets/images/js-ct-interaction-schema.png" data-lightbox="all-images-must-share-this-same-attribute" data-title="STIC I perspective">
+                    <img src="./assets/images/js-ct-interaction-schema.png" title="STIC I perspective" alt="STIC I perspective">
+                </a>
+            </li>
+            <li>
+                <!-- Second image -->
+                <a href="./assets/images/programming-io-with-binary.png" data-lightbox="all-images-must-share-this-same-attribute" data-title="Binary intentions">
+                    <img src="./assets/images/programming-io-with-binary.png" title="Binary intentions" alt="Binary intentions">
+                </a>
+            </li>
+            <li>
+                <!-- Third image -->
+                <a href="./assets/images/js-environment.png" data-lightbox="all-images-must-share-this-same-attribute" data-title="The importance of environment in JavaScript">
+                    <img src="./assets/images/js-environment.png" title="The importance of environment in JavaScript" alt="The importance of environment in JavaScript">
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- If you already have jQuery in your page, you can include just the lightbox plugin -->
+    <!-- FIRST you must include the jQuery library -->
+    <script src="./assets/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!-- SECOND the lightbox plugin -->
+    <script src="./assets/vendor/lightbox/js/lightbox.min.js"></script>
+</body>
+
+</html>
